@@ -13,10 +13,10 @@ import { MenuItems } from '@/entities';
 const PLACEHOLDER_IMAGE = "https://static.wixstatic.com/media/d4f547_fdfefda93b0241bfac3b68de33198c96~mv2.png?originWidth=1920&originHeight=1024";
 
 const SERVICES = [
-  { id: 'dine-in', title: 'Dine-in', description: 'Experience our vibrant atmosphere and exceptional service in person.', icon: Utensils },
-  { id: 'drive-through', title: 'Drive-through', description: 'Quick and convenient pickup without leaving your vehicle.', icon: Car },
-  { id: 'delivery', title: 'No-contact delivery', description: 'Safe delivery right to your doorstep with contactless options.', icon: ShoppingBag },
-  { id: 'online', title: 'Order online', description: 'Browse our menu and place orders from the comfort of home.', icon: ArrowRight },
+  { id: 'dine-in', title: 'Dine-in', description: 'Experience our vibrant atmosphere and exceptional service in person.', icon: Utensils, color: '#FF006E' },
+  { id: 'drive-through', title: 'Drive-through', description: 'Quick and convenient pickup without leaving your vehicle.', icon: Car, color: '#00D9FF' },
+  { id: 'delivery', title: 'No-contact delivery', description: 'Safe delivery right to your doorstep with contactless options.', icon: ShoppingBag, color: '#00FF88' },
+  { id: 'online', title: 'Order online', description: 'Browse our menu and place orders from the comfort of home.', icon: ArrowRight, color: '#FF6B35' },
 ];
 
 export default function HomePage() {
@@ -59,7 +59,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-dark-bg via-dark-card to-dark-bg text-secondary selection:bg-neonaccent selection:text-primary">
+    <div className="min-h-screen flex flex-col bg-background text-foreground selection:bg-neonaccent selection:text-primary">
       <Header />
 
       <main className="flex-grow flex flex-col w-full overflow-clip">
@@ -321,11 +321,11 @@ export default function HomePage() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="bg-dark-card p-8 lg:p-12 flex flex-col group hover:bg-gradient-to-br hover:from-neonaccent/20 hover:to-neonorange/20 transition-all duration-300"
                   >
-                    <div className={`mb-12 p-4 rounded-full border-2 border-${service.color.split(' ')[1]} inline-block self-start group-hover:scale-110 transition-transform`} style={{
-                      borderColor: service.color === 'from-neonpink to-neonorange' ? '#FF006E' : service.color === 'from-neonblue to-neonpurple' ? '#00D9FF' : service.color === 'from-neongreen to-neonaccent' ? '#00FF88' : '#FF6B35'
+                    <div className={`mb-12 p-4 rounded-full border-2 inline-block self-start group-hover:scale-110 transition-transform`} style={{
+                      borderColor: service.color
                     }}>
                       <Icon size={32} strokeWidth={1.5} style={{
-                        color: service.color === 'from-neonpink to-neonorange' ? '#FF006E' : service.color === 'from-neonblue to-neonpurple' ? '#00D9FF' : service.color === 'from-neongreen to-neonaccent' ? '#00FF88' : '#FF6B35'
+                        color: service.color
                       }} />
                     </div>
                     <h3 className="font-heading text-3xl uppercase mb-4 text-secondary">
