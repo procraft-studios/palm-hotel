@@ -57,11 +57,11 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-secondary">
       <Header />
 
       {/* Hero Section */}
-      <section className="w-full bg-neonaccent">
+      <section className="w-full bg-accent">
         <div className="max-w-[120rem] mx-auto px-6 lg:px-12 py-16 lg:py-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -90,13 +90,13 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-heading text-3xl lg:text-4xl uppercase text-primary mb-8">
+              <h2 className="font-heading text-3xl lg:text-4xl uppercase text-secondary mb-8 bg-gradient-to-r from-neonaccent to-neonorange bg-clip-text text-transparent">
                 Visit Us
               </h2>
 
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="bg-neonaccent p-3 flex-shrink-0">
+                  <div className="bg-accent p-3 flex-shrink-0">
                     <MapPin size={24} className="text-primary" />
                   </div>
                   <div>
@@ -110,7 +110,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-neonaccent p-3 flex-shrink-0">
+                  <div className="bg-accent p-3 flex-shrink-0">
                     <Phone size={24} className="text-primary" />
                   </div>
                   <div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-neonaccent p-3 flex-shrink-0">
+                  <div className="bg-accent p-3 flex-shrink-0">
                     <Clock size={24} className="text-primary" />
                   </div>
                   <div>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-neonaccent p-3 flex-shrink-0">
+                  <div className="bg-accent p-3 flex-shrink-0">
                     <Mail size={24} className="text-primary" />
                   </div>
                   <div>
@@ -161,13 +161,13 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="font-heading text-3xl lg:text-4xl uppercase text-primary mb-8">
+              <h2 className="font-heading text-3xl lg:text-4xl uppercase text-secondary mb-8 bg-gradient-to-r from-neonpink to-neonorange bg-clip-text text-transparent">
                 Send Message
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="senderName" className="font-paragraph text-sm text-primary mb-2 block">
+                  <label htmlFor="senderName" className="font-paragraph text-sm text-secondary mb-2 block">
                     Your Name
                   </label>
                   <Input
@@ -177,13 +177,13 @@ export default function ContactPage() {
                     required
                     value={formData.senderName}
                     onChange={handleChange}
-                    className="w-full border-primary/20 focus:border-primary font-paragraph"
+                    className="w-full bg-dark-card border-neonaccent/30 text-secondary focus:border-neonaccent font-paragraph"
                     placeholder="Enter your name"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="emailAddress" className="font-paragraph text-sm text-primary mb-2 block">
+                  <label htmlFor="emailAddress" className="font-paragraph text-sm text-secondary mb-2 block">
                     Email Address
                   </label>
                   <Input
@@ -193,13 +193,13 @@ export default function ContactPage() {
                     required
                     value={formData.emailAddress}
                     onChange={handleChange}
-                    className="w-full border-primary/20 focus:border-primary font-paragraph"
+                    className="w-full bg-dark-card border-neonaccent/30 text-secondary focus:border-neonaccent font-paragraph"
                     placeholder="your@email.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phoneNumber" className="font-paragraph text-sm text-primary mb-2 block">
+                  <label htmlFor="phoneNumber" className="font-paragraph text-sm text-secondary mb-2 block">
                     Phone Number
                   </label>
                   <Input
@@ -208,13 +208,13 @@ export default function ContactPage() {
                     type="tel"
                     value={formData.phoneNumber}
                     onChange={handleChange}
-                    className="w-full border-primary/20 focus:border-primary font-paragraph"
+                    className="w-full bg-dark-card border-neonaccent/30 text-secondary focus:border-neonaccent font-paragraph"
                     placeholder="+91 XXXXX XXXXX"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="messageContent" className="font-paragraph text-sm text-primary mb-2 block">
+                  <label htmlFor="messageContent" className="font-paragraph text-sm text-secondary mb-2 block">
                     Message
                   </label>
                   <Textarea
@@ -223,7 +223,7 @@ export default function ContactPage() {
                     required
                     value={formData.messageContent}
                     onChange={handleChange}
-                    className="w-full border-primary/20 focus:border-primary font-paragraph min-h-[150px]"
+                    className="w-full bg-dark-card border-neonaccent/30 text-secondary focus:border-neonaccent font-paragraph min-h-[150px]"
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
@@ -232,7 +232,7 @@ export default function ContactPage() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-neonaccent p-4"
+                    className="bg-accent p-4"
                   >
                     <p className="font-paragraph text-sm text-primary">
                       Thank you! Your message has been sent successfully. We'll get back to you soon.
@@ -243,7 +243,7 @@ export default function ContactPage() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-primary-foreground hover:opacity-90 font-paragraph text-base py-6"
+                  className="w-full bg-primary text-primary-foreground hover:opacity-90 font-paragraph text-base py-6 transition-opacity"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
@@ -261,7 +261,7 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-primary/5 aspect-[16/9] lg:aspect-[21/9] flex items-center justify-center"
+            className="bg-accent aspect-[16/9] lg:aspect-[21/9] flex items-center justify-center border border-primary/10"
           >
             <div className="text-center p-8">
               <MapPin size={48} className="text-primary/40 mx-auto mb-4" />
